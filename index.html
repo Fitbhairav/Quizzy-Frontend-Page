@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
   <title>Task</title>
   <style>
+    /* Common styles for all devices */
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to right, #30006a, #a0a6dd);
@@ -22,7 +23,8 @@
     }
 
     .logo img {
-      height: 130px;
+      height: auto;
+      max-height: 130px;
       margin-left: 20px;
     }
 
@@ -31,7 +33,7 @@
       font-size: 14px;
       display: flex;
       align-items: center;
-      margin-right: 65px;
+      margin-right: 5%;
     }
 
     .contact-details img {
@@ -60,119 +62,218 @@
     }
 
     .web {
-      margin-top: 50px;
+      margin-top: 5%;
       font-size: 33px;
-      margin-left: 40px;
+      margin-left: 5%;
       color: #fff;
     }
 
     .web p {
-      margin-top: 0px;
+      margin-top: 0;
       font-size: 35px;
-      margin-left: 40px;
+      margin-left: 5%;
       color: #f2b203;
     }
 
     .text p {
-      margin-top: 0px;
+      margin-top: 0;
       font-size: 15px;
-      margin-left: 40px;
-      margin-top: -142px;
+      margin-left: 5%;
+      margin-top: -160px;
       color: #ffffff;
     }
 
     .connect img {
       width: 135px;
       height: 30px;
-      margin-left: 40px;
+      margin-left: 5%;
     }
 
     .load img {
       margin-top: -10px;
-      margin-left: 180px;
+      margin-left: 5%;
       width: 25px;
       height: 25px;
     }
 
     .group img {
-      margin-left: 1457px;
+      margin-left: 95%;
       margin-top: -60px;
       height: 70px;
     }
 
     .clients {
-      margin-left: 40px;
-      margin-top: 0px;
+      margin-left: 5%;
+      margin-top: 5%;
       color: #ffffff;
     }
 
-    .count{
+    .count {
       margin-top: -63px;
-      margin-left: 477px;
+      margin-left: 60%;
       width: 200px;
       border-radius: 25px;
       background-color: rgb(0, 255, 0);
     }
 
-    .count p{
-    color: black;
-    font-size: 20px;
+    .count p {
+      color: black;
+      font-size: 20px;
     }
 
     .video img {
-      margin-left: 1000px;
+      margin-left: 77%;
       margin-top: -100px;
-      width: 250px;
-      height: 250px;
+      width: 300px;
+      height: 290px;
     }
 
     .footer-slider {
-      width: 1400px;
-      margin-top: 30px;
-      margin-left: 60px;
-      height: 60px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 30px;
-    }
+  max-width: 100%;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 30px;
+}
 
-    .footer-slider .marquee {
-      display: flex;
-      position: absolute;
-      animation: marquee 20s linear infinite;
-      width: max-content;
-      /* Adjust the width to fit the circular shape */
-      transform: translateX(0%);
-    }
+.footer-slider .marquee {
+  display: flex;
+  position: absolute;
+  animation: marquee 150s linear infinite;
+  width: max-content;
+  /* Adjust the width to fit the circular shape */
+  animation-timing-function: linear;
+  /* Use linear timing function for a consistent speed */
+  transform-origin: 0 50%;
+  /* Set the origin point for rotation at the left side */
+}
 
-    .footer-slider .marquee .child {
-      width: 200px;
-      height: 60px;
-      flex-shrink: 0;
-      /* Prevent child elements from shrinking */
-      margin-right: 20px;
-    }
+.footer-slider .marquee .child {
+  width: 200px;
+  height: 60px;
+  flex-shrink: 0;
+  /* Prevent child elements from shrinking */
+  margin-right: 20px;
+}
 
-    .footer-slider .marquee .child:last-child {
-      margin-right: 0;
-      /* Remove margin for the last child element */
-    }
+.footer-slider .marquee .child:last-child {
+  margin-right: 0;
+  /* Remove margin for the last child element */
+}
 
-    .footer-slider .marquee .child img {
-      object-fit: contain;
-      width: 80%;
-      height: 60px;
-    }
+.footer-slider .marquee .child img {
+  object-fit: contain;
+  width: 80%;
+  height: 60px;
+}
 
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+    /* Media queries for different devices */
+    @media only screen and (max-width: 767px) {
+      /* Styles for phones */
+      .logo img {
+        height: 80px;
       }
 
-      100% {
-        transform: translateX(-100%);
+      .contact-details h4 {
+        display: none;
+      }
+
+      .web,
+      .web p,
+      .text p,
+      .count {
+        margin-left: 5%;
+        font-size: 20px;
+      }
+
+      .video img {
+        margin-left: 5%;
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+      }
+
+      .load img {
+        margin-left: 6%;
+      }
+
+      .group img {
+        margin-left: 16%;
+        margin-top: -40px;
+        height: 50px;
       }
     }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      /* Styles for tablets */
+      .logo img {
+        height: 100px;
+      }
+
+      .web,
+      .web p,
+      .text p,
+      .count {
+        margin-left: 5%;
+        font-size: 25px;
+      }
+
+      .video img {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+        width: 70%;
+        height: auto;
+      }
+
+      .load img {
+        margin-left: 9%;
+      }
+
+      .group img {
+        margin-left: 60%;
+        margin-top: -70px;
+        height: 60px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      /* Styles for laptops and larger screens */
+      .logo img {
+        height: 130px;
+        margin-left: 58px;
+      }
+    }
+
+    .call-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(5, 255, 5);
+  color: #333;
+  margin-left: -20px;
+  margin-right: 80px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.call-button:hover {
+  background-color: #f2b203;
+  color: #fff;
+}
   </style>
   <link rel="stylesheet" type="text/css" href="slick.css">
   <link rel="stylesheet" type="text/css" href="slick-theme.css">
@@ -181,15 +282,18 @@
 <body>
   <div class="navbar">
     <div class="logo">
-      <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 7.png" alt="Logo">
+      <img src="\image 7.png" alt="Logo">
     </div>
     <div class="contact-details">
-      <h4>For Inquiry:- Contact Us : 00 00 00 00 00 | mailid@gmail.com</h4>
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="instagram.png" alt="Instagram">
+      <h4>For Inquiry:-</h4>
+        <div>
+        <a href="https://calendly.com/quizzy/30min?back=1&month=2023-06" class="call-button">Book a Call</a>
+      </div>
+      <a href="https://www.instagram.com/quizzyinc/" target="_blank">
+        <img src="Instagram.png" alt="Instagram">
       </a>
-      <a href="https://www.linkedin.com/" target="_blank">
-        <img src="linkedin.png" alt="LinkedIn">
+      <a href="https://www.linkedin.com/company/quizzy-eduservices/" target="_blank">
+        <img src="LinkedIn.png" alt="LinkedIn">
       </a>
     </div>
   </div>
@@ -197,31 +301,19 @@
   <div class="web">
     Website
     <p><b>UNDER CONSTRUCTION</b></p>
-    <div class="count">
-      <p id="countdown"></p>
-    </div>
+    
     TEXT TEXT
   </div>
-  
+
   <div class="video">
-    <img src="C:\Users\LENOVO\OneDrive\Desktop\task\video.png" alt="Video">
+    <img src="\quizzy_logo.png" alt="Video">
   </div>
   <div class="text">
     <p>
-      Lorem Ipsum is simply dummy text of<br> the printing and typesetting industry. <br>
-      Lorem Ipsum has been the industry's <br>standard dummy text ever since the 1500s, <br>
-      when an unknown.
-    </p>
-  </div>
-
-  <div class="connect">
-    <img src="C:\Users\LENOVO\OneDrive\Desktop\task\Frame 3.png" alt="Connect">
-  </div>
-  <div class="load">
-    <img src="C:\Users\LENOVO\OneDrive\Desktop\task\Group 6.png" alt="Loading">
-  </div>
-  <div class="group">
-    <img src="C:\Users\LENOVO\OneDrive\Desktop\task\Group 19.png" alt="Group">
+      At Quizzy, we're your powerhouse for creating content and data on a gra-<br>nd scale. With a diverse, skilled remote team
+      at the helm, we focus on pr-<br>ecision and quality. We dream big with you, providing the tools and talent<br>  to bring those 
+      dreams to life. Together, we're not just scaling heights; we'<br>re forging new frontiers and shaping the future.
+    </b>
   </div>
 
   <div class="clients">
@@ -232,28 +324,220 @@
     <div class="footer-slider">
       <div class="marquee">
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 17.png" alt="solana">
+          <img src="\image 17.png" alt="solana">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 45.png" alt="polygon">
+          <img src="\image 45.png" alt="polygon">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 46.png" alt="ethereum">
+          <img src="\image 46.png" alt="ethereum">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 47.png" alt="arbitrum">
+          <img src="\image 47.png" alt="arbitrum">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 48.png" alt="arbitrum">
+          <img src="\image 48.png" alt="arbitrum">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 49.png" alt="arbitrum">
+          <img src="\image 49.png" alt="arbitrum">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 50.png" alt="arbitrum">
+          <img src="\image 50.png" alt="arbitrum">
         </div>
         <div class="child">
-          <img src="C:\Users\LENOVO\OneDrive\Desktop\task\image 55.png" alt="arbitrum">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 17.png" alt="solana">
+        </div>
+        <div class="child">
+          <img src="\image 45.png" alt="polygon">
+        </div>
+        <div class="child">
+          <img src="\image 46.png" alt="ethereum">
+        </div>
+        <div class="child">
+          <img src="\image 47.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 48.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 49.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 50.png" alt="arbitrum">
+        </div>
+        <div class="child">
+          <img src="\image 55.png" alt="arbitrum">
         </div>
       </div>
     </div>
@@ -261,34 +545,7 @@
 
   <script>
     // Set the date and time for the maintenance completion
-    const maintenanceCompletionDate = new Date('2023-06-16T12:00:00Z');
-
-    function updateCountdown() {
-      const currentDate = new Date();
-
-      // Calculate the remaining time
-      const remainingTime = maintenanceCompletionDate - currentDate;
-
-      // Calculate the remaining days, hours, minutes, and seconds
-      const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-      // Format the remaining time
-      const countdown = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      // Update the countdown element
-      document.getElementById('countdown').textContent = countdown;
-
-      // If the maintenance is already completed, display a message
-      if (remainingTime < 0) {
-        document.getElementById('countdown').textContent = "Maintenance completed";
-      }
-    }
-
-    // Update the countdown every second
-    setInterval(updateCountdown, 1000);
+    
   </script>
 </body>
 
